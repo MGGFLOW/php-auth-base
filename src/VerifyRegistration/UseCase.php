@@ -7,32 +7,62 @@ use MGGFLOW\PhpAuth\Exceptions\VerificationFailed;
 
 class UseCase
 {
+    /**
+     * Gate to handle data.
+     *
+     * @var DataGateInterface
+     */
     protected DataGateInterface $dataGate;
+
+    /**
+     * Verification Code.
+     *
+     * @var string
+     */
     protected string $verificationCode;
 
+    /**
+     * Forward dependencies.
+     *
+     * @param DataGateInterface $dataGate
+     */
     public function __construct(DataGateInterface $dataGate)
     {
         $this->dataGate = $dataGate;
     }
 
-    public function setVerificationCode($code){
+    /**
+     * Verification Code setter.
+     *
+     * @param $code
+     */
+    public function setVerificationCode($code)
+    {
         $this->verificationCode = $code;
     }
 
     /**
-     * @throws VerificationFailed
+     * Verify User by Verification Code.
+     *
      * @throws NoVerificationCode
+     * @throws VerificationFailed
      */
-    public function verify(){
-        if(empty($this->verificationCode)){
+    public function verify()
+    {
+        if (empty($this->verificationCode)) {
             throw new NoVerificationCode();
         }
 
-        if(!$this->verifyUserByCod()){
+        if (!$this->verifyUserByCod()) {
             throw new VerificationFailed();
         }
     }
 
+    /**
+     * Change User state to Verified.
+     *
+     * @return bool
+     */
     protected function verifyUserByCod(): bool
     {
         return $this->dataGate->setUserVerifiedByCode($this->verificationCode);

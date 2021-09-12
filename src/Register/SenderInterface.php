@@ -4,5 +4,12 @@ namespace MGGFLOW\PhpAuth\Register;
 
 interface SenderInterface
 {
-    public function sendCode($email,$code) : bool;
+    /**
+     * Send verification code on User Email.
+     *
+     * @param $email
+     * @param $code
+     * @return bool
+     */
+    public function sendCode($email, $code): bool;
 }

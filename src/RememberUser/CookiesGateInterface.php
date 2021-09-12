@@ -4,5 +4,13 @@ namespace MGGFLOW\PhpAuth\RememberUser;
 
 interface CookiesGateInterface
 {
-    public function addCookie($key,$data,$expiredAt);
+    /**
+     * Set cookie or add to queue.
+     *
+     * @param $key
+     * @param $data
+     * @param $expiredAt
+     * @return mixed
+     */
+    public function addCookie($key, $data, $expiredAt);
 }

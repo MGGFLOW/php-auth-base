@@ -9,53 +9,100 @@ use MGGFLOW\PhpAuth\Exceptions\WrongPassword;
 
 class UseCase
 {
+    /**
+     * Email.
+     *
+     * @var string
+     */
     protected string $email = '';
+
+    /**
+     * Username.
+     *
+     * @var string
+     */
     protected string $username = '';
+
+    /**
+     * Password.
+     *
+     * @var string
+     */
     protected string $password = '';
 
+    /**
+     * Gate to handle data.
+     *
+     * @var DataGateInterface
+     */
     protected DataGateInterface $dataGate;
 
+    /**
+     * Forward dependencies.
+     *
+     * @param DataGateInterface $dataGate
+     */
     public function __construct(DataGateInterface $dataGate)
     {
         $this->dataGate = $dataGate;
     }
 
-    public function setEmail(string $email){
+    /**
+     * Email setter.
+     *
+     * @param string $email
+     */
+    public function setEmail(string $email)
+    {
         $this->email = $email;
     }
 
-    public function setUsername(string $username){
+    /**
+     * Username setter.
+     *
+     * @param string $username
+     */
+    public function setUsername(string $username)
+    {
         $this->username = $username;
     }
 
-    public function setPassword(string $pass){
+    /**
+     * Password setter.
+     *
+     * @param string $pass
+     */
+    public function setPassword(string $pass)
+    {
         $this->password = $pass;
     }
 
     /**
+     * Authenticate by Password.
+     *
      * @throws UserUnverified
      * @throws UserDoesntExist
      * @throws WrongPassword
      */
     public function auth(): ?object
     {
-        if(!empty($this->email)){
+        if (!empty($this->email)) {
             $user = $this->dataGate->getUserByEmail($this->email);
-        }elseif (!empty($this->username)){
+        } elseif (!empty($this->username)) {
             $user = $this->dataGate->getUserByUsername($this->username);
-        }else{
+        } else {
             return null;
         }
 
-        if(empty($user)){
+        if (empty($user)) {
             throw new UserDoesntExist();
         }
 
-        if(empty($user->verified)){
+        if (empty($user->verified)) {
             throw new UserUnverified();
         }
 
-        if(!$this->passwordEqualHash($this->password,$user->pwdHash)){
+        if (!$this->passwordEqualHash($this->password, $user->pwdHash)) {
             throw new WrongPassword();
         }
 
@@ -63,7 +110,7 @@ class UseCase
     }
 
     /**
-     * Compare password with hash
+     * Compare password with hash.
      *
      * @param string $password
      * @param string $hash

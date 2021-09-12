@@ -4,5 +4,11 @@ namespace MGGFLOW\PhpAuth\VerifyRegistration;
 
 interface DataGateInterface
 {
-    public function setUserVerifiedByCode($verificationCode) : bool;
+    /**
+     * Change verified state to "true" for User by Verification Code.
+     *
+     * @param $verificationCode
+     * @return bool
+     */
+    public function setUserVerifiedByCode($verificationCode): bool;
 }
