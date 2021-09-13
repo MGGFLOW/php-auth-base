@@ -1,8 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate;
-
-use MGGFLOW\PhpAuth\Authenticate\ByToken\DataGateInterface;
+namespace MGGFLOW\PhpAuth\Authenticate\ByToken;
 
 class UseCase
 {
