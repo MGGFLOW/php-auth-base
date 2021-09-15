@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\VerifyRegistration;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface VerifyRegData
 {
     /**
      * Change verified state to "true" for User by Verification Code.

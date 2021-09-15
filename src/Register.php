@@ -5,22 +5,24 @@ namespace MGGFLOW\PhpAuth\Register;
 use MGGFLOW\PhpAuth\Exceptions\CodeSendingFailed;
 use MGGFLOW\PhpAuth\Exceptions\UserAlreadyExists;
 use MGGFLOW\PhpAuth\Exceptions\UserCreationFailed;
+use MGGFLOW\PhpAuth\Interfaces\CodeSender;
+use MGGFLOW\PhpAuth\Interfaces\RegisterData;
 
-class UseCase
+class Register
 {
     /**
      * Email sender.
      *
-     * @var SenderInterface
+     * @var CodeSender
      */
-    protected SenderInterface $sender;
+    protected CodeSender $sender;
 
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var RegisterData
      */
-    protected DataGateInterface $dataGate;
+    protected RegisterData $dataGate;
 
     /**
      * Email.
@@ -81,10 +83,10 @@ class UseCase
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
-     * @param SenderInterface $sender
+     * @param RegisterData $dataGate
+     * @param CodeSender $sender
      */
-    public function __construct(DataGateInterface $dataGate, SenderInterface $sender)
+    public function __construct(RegisterData $dataGate, CodeSender $sender)
     {
         $this->dataGate = $dataGate;
         $this->sender = $sender;

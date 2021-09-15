@@ -2,7 +2,9 @@
 
 namespace MGGFLOW\PhpAuth\RemoveUnverified;
 
-class UseCase
+use MGGFLOW\PhpAuth\Interfaces\RemoveUnverifiedData;
+
+class RemoveUnverified
 {
     /**
      * Time for User Verification.
@@ -14,9 +16,9 @@ class UseCase
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var RemoveUnverifiedData
      */
-    protected DataGateInterface $dataGate;
+    protected RemoveUnverifiedData $dataGate;
 
     /**
      * Unverified Users created older this time will remove.
@@ -28,9 +30,9 @@ class UseCase
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
+     * @param RemoveUnverifiedData $dataGate
      */
-    public function __construct(DataGateInterface $dataGate)
+    public function __construct(RemoveUnverifiedData $dataGate)
     {
         $this->dataGate = $dataGate;
     }

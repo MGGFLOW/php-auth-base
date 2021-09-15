@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByPassword;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface AuthByPasswordData
 {
     /**
      * Get User object by Email.

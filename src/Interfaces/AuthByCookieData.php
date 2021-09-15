@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByCookie;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface AuthByCookieData
 {
     /**
      * Get User Object by id.

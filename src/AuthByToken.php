@@ -2,7 +2,11 @@
 
 namespace MGGFLOW\PhpAuth\Authenticate\ByToken;
 
-class UseCase
+use MGGFLOW\PhpAuth\Authentication;
+use MGGFLOW\PhpAuth\Interfaces\AuthByTokenData;
+use MGGFLOW\PhpAuth\Interfaces\Authenticator;
+
+class AuthByToken extends Authentication implements Authenticator
 {
     /**
      * Access Token.
@@ -14,18 +18,18 @@ class UseCase
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var AuthByTokenData
      */
-    protected DataGateInterface $dataGate;
+    protected AuthByTokenData $data;
 
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
+     * @param AuthByTokenData $dataGate
      */
-    public function __construct(DataGateInterface $dataGate)
+    public function __construct(AuthByTokenData $dataGate)
     {
-        $this->dataGate = $dataGate;
+        $this->data = $dataGate;
     }
 
     /**
@@ -41,11 +45,13 @@ class UseCase
     /**
      * Authenticate by Access Token.
      *
-     * @return object|null
+     * @return AuthByToken
      */
-    public function auth(): ?object
+    public function auth(): self
     {
-        return $this->getTokenUser();
+        $this->currentUser = $this->getTokenUser();
+
+        return $this;
     }
 
     /**
@@ -55,6 +61,6 @@ class UseCase
      */
     protected function getTokenUser(): ?object
     {
-        return $this->dataGate->getUserByToken($this->accessToken);
+        return $this->data->getUserByToken($this->accessToken);
     }
 }

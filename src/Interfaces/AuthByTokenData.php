@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByToken;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface AuthByTokenData
 {
     /**
      * Get User object by Access Token.

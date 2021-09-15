@@ -3,8 +3,9 @@
 namespace MGGFLOW\PhpAuth\RememberUser;
 
 use MGGFLOW\PhpAuth\Exceptions\InvalidCurrentUser;
+use MGGFLOW\PhpAuth\Interfaces\RememberUserCookies;
 
-class UseCase
+class RememberUser
 {
     /**
      * Key for Authentication Cookie.
@@ -30,16 +31,16 @@ class UseCase
     /**
      * Gate to handle data.
      *
-     * @var CookiesGateInterface
+     * @var RememberUserCookies
      */
-    protected CookiesGateInterface $cookies;
+    protected RememberUserCookies $cookies;
 
     /**
      * Forward dependencies.
      *
-     * @param CookiesGateInterface $cookies
+     * @param RememberUserCookies $cookies
      */
-    public function __construct(CookiesGateInterface $cookies)
+    public function __construct(RememberUserCookies $cookies)
     {
         $this->cookies = $cookies;
     }

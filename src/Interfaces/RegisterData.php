@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Register;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface RegisterData
 {
     /**
      * Create User note by fields array.
@@ -10,7 +10,7 @@ interface DataGateInterface
      * @param array $fields
      * @return mixed
      */
-    public function createUser(array $fields);
+    public function createUser(array $fields) : ?int;
 
     /**
      * Check User existence by Email or Username.

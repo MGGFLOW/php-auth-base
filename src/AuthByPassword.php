@@ -2,11 +2,14 @@
 
 namespace MGGFLOW\PhpAuth\Authenticate\ByPassword;
 
+use MGGFLOW\PhpAuth\Authentication;
+use MGGFLOW\PhpAuth\Interfaces\AuthByPasswordData;
+use MGGFLOW\PhpAuth\Interfaces\Authenticator;
 use MGGFLOW\PhpAuth\Exceptions\UserDoesntExist;
 use MGGFLOW\PhpAuth\Exceptions\UserUnverified;
 use MGGFLOW\PhpAuth\Exceptions\WrongPassword;
 
-class UseCase
+class AuthByPassword extends Authentication implements Authenticator
 {
     /**
      * Email.
@@ -32,16 +35,16 @@ class UseCase
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var AuthByPasswordData
      */
-    protected DataGateInterface $dataGate;
+    protected AuthByPasswordData $dataGate;
 
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
+     * @param AuthByPasswordData $dataGate
      */
-    public function __construct(DataGateInterface $dataGate)
+    public function __construct(AuthByPasswordData $dataGate)
     {
         $this->dataGate = $dataGate;
     }
@@ -83,14 +86,12 @@ class UseCase
      * @throws UserDoesntExist
      * @throws WrongPassword
      */
-    public function auth(): ?object
+    public function auth(): self
     {
         if (!empty($this->email)) {
             $user = $this->dataGate->getUserByEmail($this->email);
         } elseif (!empty($this->username)) {
             $user = $this->dataGate->getUserByUsername($this->username);
-        } else {
-            return null;
         }
 
         if (empty($user)) {
@@ -105,7 +106,9 @@ class UseCase
             throw new WrongPassword();
         }
 
-        return $user;
+        $this->currentUser = $user;
+
+        return $this;
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\RememberUser;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface CookiesGateInterface
+interface RememberUserCookies
 {
     /**
      * Set cookie or add to queue.

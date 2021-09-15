@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Register;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface SenderInterface
+interface CodeSender
 {
     /**
      * Send verification code on User Email.

@@ -1,8 +1,8 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\RemoveUnverified;
+namespace MGGFLOW\PhpAuth\Interfaces;
 
-interface DataGateInterface
+interface RemoveUnverifiedData
 {
     /**
      * Delete unverified expired User notes.

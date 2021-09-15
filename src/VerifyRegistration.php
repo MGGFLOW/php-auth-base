@@ -4,15 +4,16 @@ namespace MGGFLOW\PhpAuth\VerifyRegistration;
 
 use MGGFLOW\PhpAuth\Exceptions\NoVerificationCode;
 use MGGFLOW\PhpAuth\Exceptions\VerificationFailed;
+use MGGFLOW\PhpAuth\Interfaces\VerifyRegData;
 
-class UseCase
+class VerifyRegistration
 {
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var VerifyRegData
      */
-    protected DataGateInterface $dataGate;
+    protected VerifyRegData $dataGate;
 
     /**
      * Verification Code.
@@ -24,9 +25,9 @@ class UseCase
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
+     * @param VerifyRegData $dataGate
      */
-    public function __construct(DataGateInterface $dataGate)
+    public function __construct(VerifyRegData $dataGate)
     {
         $this->dataGate = $dataGate;
     }

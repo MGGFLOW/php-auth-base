@@ -2,9 +2,11 @@
 
 namespace MGGFLOW\PhpAuth\Authenticate\ByCookie;
 
-use MGGFLOW\PhpAuth\Authenticate\AuthenticatorInterface;
+use MGGFLOW\PhpAuth\Authentication;
+use MGGFLOW\PhpAuth\Interfaces\AuthByCookieData;
+use MGGFLOW\PhpAuth\Interfaces\Authenticator;
 
-class UseCase implements AuthenticatorInterface
+class AuthByCookie extends Authentication implements Authenticator
 {
     /**
      * Authentication cookie data object.
@@ -16,16 +18,16 @@ class UseCase implements AuthenticatorInterface
     /**
      * Gate to handle data.
      *
-     * @var DataGateInterface
+     * @var AuthByCookieData
      */
-    protected DataGateInterface $dataGate;
+    protected AuthByCookieData $dataGate;
 
     /**
      * Forward dependencies.
      *
-     * @param DataGateInterface $dataGate
+     * @param AuthByCookieData $dataGate
      */
-    public function __construct(DataGateInterface $dataGate)
+    public function __construct(AuthByCookieData $dataGate)
     {
         $this->dataGate = $dataGate;
     }
@@ -46,25 +48,24 @@ class UseCase implements AuthenticatorInterface
     /**
      * Authenticate User by cookie.
      *
-     * @return object|null
+     * @return AuthByCookie
      */
-    public function auth(): ?object
+    public function auth(): self
     {
-        return $this->getCookieUser();
+        $this->currentUser = $this->getCookieUser();
+
+        return $this;
     }
 
     /**
      * Get User data object by id from Cookie.
      *
-     * @param $userId
      * @return object|null
      */
     protected function getCookieUser(): ?object
     {
         if (empty($this->cookie->userId)) return null;
 
-        $userId = $this->cookie->userId;
-
-        return $this->dataGate->getUserById($userId);
+        return $this->dataGate->getUserById($this->cookie->userId);
     }
 }
