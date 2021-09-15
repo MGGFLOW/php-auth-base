@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\VerifyRegistration;
+namespace MGGFLOW\PhpAuth;
 
 use MGGFLOW\PhpAuth\Exceptions\NoVerificationCode;
 use MGGFLOW\PhpAuth\Exceptions\VerificationFailed;

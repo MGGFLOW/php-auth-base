@@ -1,8 +1,7 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByPassword;
+namespace MGGFLOW\PhpAuth;
 
-use MGGFLOW\PhpAuth\Authentication;
 use MGGFLOW\PhpAuth\Interfaces\AuthByPasswordData;
 use MGGFLOW\PhpAuth\Interfaces\Authenticator;
 use MGGFLOW\PhpAuth\Exceptions\UserDoesntExist;

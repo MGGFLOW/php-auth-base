@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\RemoveUnverified;
+namespace MGGFLOW\PhpAuth;
 
 use MGGFLOW\PhpAuth\Interfaces\RemoveUnverifiedData;
 

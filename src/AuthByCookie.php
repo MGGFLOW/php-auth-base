@@ -1,8 +1,7 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByCookie;
+namespace MGGFLOW\PhpAuth;
 
-use MGGFLOW\PhpAuth\Authentication;
 use MGGFLOW\PhpAuth\Interfaces\AuthByCookieData;
 use MGGFLOW\PhpAuth\Interfaces\Authenticator;
 

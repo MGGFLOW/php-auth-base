@@ -1,8 +1,7 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Authenticate\ByToken;
+namespace MGGFLOW\PhpAuth;
 
-use MGGFLOW\PhpAuth\Authentication;
 use MGGFLOW\PhpAuth\Interfaces\AuthByTokenData;
 use MGGFLOW\PhpAuth\Interfaces\Authenticator;
 

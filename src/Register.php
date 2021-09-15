@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Register;
+namespace MGGFLOW\PhpAuth;
 
 use MGGFLOW\PhpAuth\Exceptions\CodeSendingFailed;
 use MGGFLOW\PhpAuth\Exceptions\UserAlreadyExists;
