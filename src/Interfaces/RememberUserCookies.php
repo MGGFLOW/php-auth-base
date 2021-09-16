@@ -13,4 +13,12 @@ interface RememberUserCookies
      * @return mixed
      */
     public function addCookie($key, $data, $expiredAt);
+
+    /**
+     * Remove cookie
+     *
+     * @param $key
+     * @return mixed
+     */
+    public function removeCookie($key);
 }

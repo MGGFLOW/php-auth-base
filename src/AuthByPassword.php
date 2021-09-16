@@ -101,7 +101,7 @@ class AuthByPassword extends Authentication implements Authenticator
             throw new UserUnverified();
         }
 
-        if (!$this->passwordEqualHash($this->password, $user->pwdHash)) {
+        if (!$this->passwordEqualHash($this->password, $user->pwd_hash)) {
             throw new WrongPassword();
         }
 

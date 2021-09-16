@@ -69,6 +69,10 @@ class RememberUser
         $this->cookies->addCookie($this->cookieKey, $cookie, $expiredAt);
     }
 
+    public function forget(){
+        $this->cookies->removeCookie($this->cookieKey);
+    }
+
     /**
      * Generate cookie value.
      *
