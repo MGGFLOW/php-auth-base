@@ -1,5 +1,5 @@
 {
-    "name": "mggflow/php-auth-base",
+    "name": "mggflow/auth-base",
     "type": "library",
     "license": "MIT",
     "autoload": {
