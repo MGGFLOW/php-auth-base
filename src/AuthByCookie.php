@@ -12,7 +12,7 @@ class AuthByCookie extends Authentication implements Authenticator
      *
      * @var object
      */
-    protected object $cookie = (object)[];
+    protected object $cookie;
 
     /**
      * Gate to handle data.
@@ -28,6 +28,7 @@ class AuthByCookie extends Authentication implements Authenticator
      */
     public function __construct(AuthByCookieData $dataGate)
     {
+        $this->cookie = (object)[];
         $this->dataGate = $dataGate;
     }
 
