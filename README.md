@@ -1,6 +1,15 @@
-## Basic authentication methods
+# Basic authentication methods
 
-This component provides following features:
+## Installation
+
+``
+composer require mggflow/auth-base
+``
+
+
+## About
+
+This package provides following features:
 1. Register User
 2. Verify User registration
 3. Remove unverified Users
