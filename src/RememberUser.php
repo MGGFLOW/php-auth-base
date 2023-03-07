@@ -1,9 +1,9 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Exceptions\InvalidCurrentUser;
-use MGGFLOW\PhpAuth\Interfaces\RememberUserCookies;
+use MGGFLOW\AuthBase\Exceptions\InvalidCurrentUser;
+use MGGFLOW\AuthBase\Interfaces\RememberUserCookies;
 
 class RememberUser
 {

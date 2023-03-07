@@ -21,7 +21,7 @@ This package provides following Use Cases:
 
 ## Usage
 To use necessary cases:
-1. Implement appropriate interface from MGGFLOW\PhpAuth\Interfaces
+1. Implement appropriate interface from MGGFLOW\AuthBase\Interfaces
 2. Construct an instance of case with instance of implementation
 3. Use public methods
 
@@ -29,10 +29,10 @@ To use necessary cases:
 
 ```
 $code = "received verification code"
-// VerificationDataProvider implements MGGFLOW\PhpAuth\Interfaces\VerifyRegData
+// VerificationDataProvider implements MGGFLOW\AuthBase\Interfaces\VerifyRegData
 $dataProvider = new VerificationDataProvider();
 
-$verificationCase = new MGGFLOW\PhpAuth\VerifyRegistation($dataProvider);
+$verificationCase = new MGGFLOW\AuthBase\VerifyRegistation($dataProvider);
 try {
    $verificationCase->setVerificationCode($code);
    $verificationCase->verify();

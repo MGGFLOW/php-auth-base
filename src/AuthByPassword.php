@@ -1,12 +1,12 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Interfaces\AuthByPasswordData;
-use MGGFLOW\PhpAuth\Interfaces\Authenticator;
-use MGGFLOW\PhpAuth\Exceptions\UserDoesntExist;
-use MGGFLOW\PhpAuth\Exceptions\UserUnverified;
-use MGGFLOW\PhpAuth\Exceptions\WrongPassword;
+use MGGFLOW\AuthBase\Interfaces\AuthByPasswordData;
+use MGGFLOW\AuthBase\Interfaces\Authenticator;
+use MGGFLOW\AuthBase\Exceptions\UserDoesntExist;
+use MGGFLOW\AuthBase\Exceptions\UserUnverified;
+use MGGFLOW\AuthBase\Exceptions\WrongPassword;
 
 class AuthByPassword extends Authentication implements Authenticator
 {

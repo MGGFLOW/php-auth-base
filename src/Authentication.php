@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
 class Authentication
 {

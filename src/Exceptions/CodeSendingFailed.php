@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Exceptions;
+namespace MGGFLOW\AuthBase\Exceptions;
 
 class CodeSendingFailed extends Exception
 {

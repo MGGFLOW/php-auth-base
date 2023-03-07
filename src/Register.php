@@ -1,12 +1,12 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Exceptions\CodeSendingFailed;
-use MGGFLOW\PhpAuth\Exceptions\UserAlreadyExists;
-use MGGFLOW\PhpAuth\Exceptions\UserCreationFailed;
-use MGGFLOW\PhpAuth\Interfaces\CodeSender;
-use MGGFLOW\PhpAuth\Interfaces\RegisterData;
+use MGGFLOW\AuthBase\Exceptions\CodeSendingFailed;
+use MGGFLOW\AuthBase\Exceptions\UserAlreadyExists;
+use MGGFLOW\AuthBase\Exceptions\UserCreationFailed;
+use MGGFLOW\AuthBase\Interfaces\CodeSender;
+use MGGFLOW\AuthBase\Interfaces\RegisterData;
 
 class Register
 {

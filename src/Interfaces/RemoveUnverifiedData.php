@@ -1,6 +1,6 @@
 <?php
 
-namespace MGGFLOW\PhpAuth\Interfaces;
+namespace MGGFLOW\AuthBase\Interfaces;
 
 interface RemoveUnverifiedData
 {

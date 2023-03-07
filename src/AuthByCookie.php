@@ -1,9 +1,9 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Interfaces\AuthByCookieData;
-use MGGFLOW\PhpAuth\Interfaces\Authenticator;
+use MGGFLOW\AuthBase\Interfaces\AuthByCookieData;
+use MGGFLOW\AuthBase\Interfaces\Authenticator;
 
 class AuthByCookie extends Authentication implements Authenticator
 {

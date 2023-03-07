@@ -1,10 +1,10 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Exceptions\NoVerificationCode;
-use MGGFLOW\PhpAuth\Exceptions\VerificationFailed;
-use MGGFLOW\PhpAuth\Interfaces\VerifyRegData;
+use MGGFLOW\AuthBase\Exceptions\NoVerificationCode;
+use MGGFLOW\AuthBase\Exceptions\VerificationFailed;
+use MGGFLOW\AuthBase\Interfaces\VerifyRegData;
 
 class VerifyRegistration
 {

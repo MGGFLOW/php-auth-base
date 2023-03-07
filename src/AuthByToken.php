@@ -1,9 +1,9 @@
 <?php
 
-namespace MGGFLOW\PhpAuth;
+namespace MGGFLOW\AuthBase;
 
-use MGGFLOW\PhpAuth\Interfaces\AuthByTokenData;
-use MGGFLOW\PhpAuth\Interfaces\Authenticator;
+use MGGFLOW\AuthBase\Interfaces\AuthByTokenData;
+use MGGFLOW\AuthBase\Interfaces\Authenticator;
 
 class AuthByToken extends Authentication implements Authenticator
 {
