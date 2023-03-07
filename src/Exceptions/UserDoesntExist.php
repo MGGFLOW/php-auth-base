@@ -2,7 +2,7 @@
 
 namespace MGGFLOW\AuthBase\Exceptions;
 
-class UserDoesntExist extends Exception
+class UserDoesntExist extends AuthBaseException
 {
     protected $message = 'User doesn`t exist';
 }

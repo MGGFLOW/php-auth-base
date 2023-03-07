@@ -2,7 +2,7 @@
 
 namespace MGGFLOW\AuthBase\Exceptions;
 
-class UserAlreadyExists extends Exception
+class UserAlreadyExists extends AuthBaseException
 {
     protected $message = 'Login or Email already exists';
 }

@@ -2,7 +2,7 @@
 
 namespace MGGFLOW\AuthBase\Exceptions;
 
-class UserCreationFailed extends Exception
+class UserCreationFailed extends AuthBaseException
 {
     protected $message = 'Failed to create new User';
 }

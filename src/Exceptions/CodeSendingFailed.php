@@ -2,7 +2,7 @@
 
 namespace MGGFLOW\AuthBase\Exceptions;
 
-class CodeSendingFailed extends Exception
+class CodeSendingFailed extends AuthBaseException
 {
     protected $message = 'Failed to send code';
 }

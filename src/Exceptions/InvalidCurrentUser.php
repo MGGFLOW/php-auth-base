@@ -2,7 +2,7 @@
 
 namespace MGGFLOW\AuthBase\Exceptions;
 
-class InvalidCurrentUser extends Exception
+class InvalidCurrentUser extends AuthBaseException
 {
     protected $message = 'Invalid current User data';
 }
